@@ -12,3 +12,9 @@ __pycache__/
 charmhub.auth
 *.rock
 *.charm
+
+# Local auth and build artifacts
+charmhub.auth
+*.rock
+*.charm
+kind
