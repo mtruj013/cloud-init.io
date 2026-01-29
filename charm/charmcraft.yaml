@@ -22,3 +22,9 @@ description: |
 
 extensions:
   - flask-framework
+
+config:
+  options:
+    cookie-service-api-key:
+      description: "Cookie Service API Key"
+      type: secret
