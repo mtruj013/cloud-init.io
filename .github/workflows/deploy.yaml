@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - charm-setup
 
 env:
   CHARMCRAFT_ENABLE_EXPERIMENTAL_EXTENSIONS: true
