@@ -126,7 +126,7 @@ jobs:
           juju wait-for application cloud-init-io --query='name=="cloud-init-io" && (status=="active" || status=="idle")'
 
   deploy-production:
-    runs-on: [self-hosted, self-hosted-linux-amd64-jammy-private-endpoint-medium]
+    runs-on: [self-hosted, self-hosted-linux-amd64-noble-private-endpoint-medium]
     needs: [pack-charm, publish-image]
     steps:
       - name: Checkout Code
