@@ -76,10 +76,10 @@ jobs:
 
       - name: Set image URL
         id: set_image_url
-        run: echo "image_url=ghcr.io/canonical/cloud-init-io:$(date +%s)-${GITHUB_SHA:0:7}" >> $GITHUB_OUTPUT
+        run: echo "image_url=ghcr.io/mtruj013/cloud-init-io:$(date +%s)-${GITHUB_SHA:0:7}" >> $GITHUB_OUTPUT
 
       - name: Push to GHCR
-        run: skopeo --insecure-policy copy oci-archive:$(ls *.rock) docker://${{ steps.set_image_url.outputs.image_url }} --dest-creds "canonical:${{ secrets.GITHUB_TOKEN }}"
+        run: skopeo --insecure-policy copy oci-archive:$(ls *.rock) docker://${{ steps.set_image_url.outputs.image_url }} --dest-creds "mtruj013:${{ secrets.GITHUB_TOKEN }}"
 
   deploy-staging:
     runs-on: [self-hosted, self-hosted-linux-amd64-jammy-private-endpoint-medium]
