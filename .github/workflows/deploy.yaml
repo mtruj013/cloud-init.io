@@ -101,8 +101,8 @@ jobs:
       - name: Configure Vault and Juju
         run: |
           export VAULT_ADDR=https://vault.admin.canonical.com:8200
-          export TF_VAR_login_approle_role_id=${{ secrets.VAULT_APPROLE_ROLE_ID }}
-          export TF_VAR_login_approle_secret_id=${{ secrets.VAULT_APPROLE_SECRET_ID }}
+          export TF_VAR_login_approle_role_id=${{ secrets.STG_VAULT_APPROLE_ROLE_ID }}
+          export TF_VAR_login_approle_secret_id=${{ secrets.STG_VAULT_APPROLE_SECRET_ID }}
           export VAULT_SECRET_PATH_ROLE=secret/prodstack6/roles/stg-cloud-init-io
           export VAULT_SECRET_PATH_COMMON=secret/prodstack6/juju/common
           VAULT_TOKEN=$(vault write -f -field=token auth/approle/login role_id=${TF_VAR_login_approle_role_id} secret_id=${TF_VAR_login_approle_secret_id})
